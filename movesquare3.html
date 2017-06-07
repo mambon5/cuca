@@ -1,0 +1,176 @@
+<html>
+
+<title>PulpoGame</title>
+<script type="text/javascript">
+
+function moveright() 
+{	
+	document.getElementById('haddition').innerHTML="14";
+}
+function moveleft() 
+{
+	document.getElementById('haddition').innerHTML="-10";
+}
+function moveup()
+{
+	document.getElementById('vaddition').innerHTML="-14";
+}
+function movedown()
+{
+	document.getElementById('vaddition').innerHTML="10";
+}
+
+
+function KeyPress(e)
+{
+    var keynum;
+
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+	
+	//38 up 40 down 37 left 39 right
+	if(keynum==38) { moveup() }
+	else if(keynum==40) { movedown() }
+	else if(keynum==39) { moveright() }
+	else if(keynum==37) { moveleft() }
+	else if(keynum==13) { enter_key() }
+		//document.getElementById('keypressed').innerHTML=String.fromCharCode(keynum);
+		document.getElementById('keypressed').innerHTML=keynum;
+ }
+function recordTime()
+{
+	if (document.getElementById('newrecord').style.visibility=="hidden")
+	{
+		document.getElementById('newrecord').style.visibility="visible"
+	}
+	else if(document.getElementById('newrecord').style.visibility=="visible")
+	{
+		document.getElementById('newrecord').style.visibility="hidden"
+	}
+	if(document.getElementById('alert').style.visibility=="visible")
+	{
+		var tu = setTimeout(recordTime, 500);
+	}
+	else
+	{
+		document.getElementById('newrecord').style.visibility="hidden";
+	}
+}
+function restart()
+{
+
+		
+		document.getElementById('alert').style.visibility="hidden";
+		document.getElementById('hcount').innerHTML="0";
+		document.getElementById('vcount').innerHTML="0";
+		document.getElementById('score').innerHTML="0";
+		document.getElementById('image').src="octopus.png";	
+		document.getElementById('newrecord').style.visibility="hidden";
+		document.getElementById('crazysea').style.visibility="hidden";
+		
+		starTime();
+	
+}
+
+function starTime()
+{
+	document.getElementById('image').style.position="absolute";
+	var left=500;
+	var top=200;
+	
+	var hcount=parseInt(document.getElementById('hcount').innerHTML,10);
+	var vcount=parseInt(document.getElementById('vcount').innerHTML,10);
+	var score=parseInt(document.getElementById('score').innerHTML,10);
+	
+	
+	var haddition=parseInt(document.getElementById('haddition').innerHTML,10);
+	var vaddition=parseInt(document.getElementById('vaddition').innerHTML,10);
+	hcount=hcount+haddition;
+	vcount=vcount+vaddition;	
+	
+	left=left+hcount;
+	left=left.toString();	
+	document.getElementById('image').style.left=left+"px";
+	document.getElementById('hcount').innerHTML=hcount ;
+	
+	top=top+vcount;
+	top=top.toString();
+	document.getElementById('image').style.top=top+"px";
+	document.getElementById('vcount').innerHTML=vcount;
+	
+	var x = parseInt(document.getElementById('image').style.left,10);
+	var y = parseInt(document.getElementById('image').style.top,10);
+	document.getElementById('coord').innerHTML="x: "+x+" y: "+y;
+		if (y<0 || x<0 || y>472 || x>1000)
+	{
+		var maxscore=parseInt(document.getElementById('maxscore').innerHTML,10);
+		var score=parseInt(document.getElementById('score').innerHTML,10);
+		if (maxscore<score)
+		{
+			document.getElementById('maxscore').innerHTML=score +" pulpo points";
+			document.getElementById('newrecord').style.visibility="visible";
+			var tu = setTimeout(recordTime, 500);
+		}
+		document.getElementById('alert').style.visibility="visible";
+		document.getElementById('image').src="sadoctopus.png";	
+		document.getElementById('image').style.width="300px";
+		document.getElementById('image').style.height="200px";
+		
+	}
+	
+	score=score+1;
+	document.getElementById('score').innerHTML=(score);
+	if (document.getElementById('alert').style.visibility=="hidden")
+	{
+	var t = setTimeout(starTime, 20);
+	}
+}
+
+</script>
+
+<body onload="starTime()" background="mangasea.jpg" onkeydown="KeyPress(event)">
+	
+	<img id="image" src="octopus.png"  style="height:200px;width:300px;position:absolute; top:200px; left:500px; " />
+
+	<p style="position:absolute; top:40px; left:20px;"> hcount: </p>
+	<p id="hcount" style="position:absolute; top:40px; left:110px; ">0</p>
+	
+	<p style="position:absolute; top:60px; left:20px;"> vcount: </p>
+	<p id="vcount" style="position:absolute; top:60px; left:110px; ">0</p>
+	
+	<p style="position:absolute; top:80px; left:20px;"> haddition </p>
+	<p id="haddition" style="position:absolute; top:80px; left:110px;"> 2 </p>
+	
+	<p style="position:absolute; top:100px; left:20px;"> vaddition </p>
+	<p id="vaddition" style="position:absolute; top:100px; left:110px;"> 2 </p>
+	
+	<p id="coord" style="position:absolute; top:120px; left:20px;"></p>
+	
+	<b><p style="color:white;position:absolute; top:10px; left:30px;">SCORE:</p>
+	<p id="score" style="color:white;position:absolute; top:10px; left:100px;">0</p> 
+	
+	<p style="position:absolute; top:10px; left:300px;">This is the Famous PULPO game, keep the pulpo smiling using your keyboard arrows :)</p></b>
+	
+	<button id="alert" onclick="restart()" style="color:red;position:absolute; top:300px; left:520px; visibility:hidden;">PULPO GOT SAD
+	(make Pulpo great again)</button></b>
+	
+	<b>
+		<p id="keypressed" style="color:white;position:absolute;top:140px;left:20px;">pupl</p>
+	</b>
+	
+	<b>
+	<p style="color:red;position:absolute; top:160px; left:20px;">Sea Record: </p>
+	<p style="color:red;position:absolute; top:160px; left:140px;" id="maxscore">0</p>
+	</b>
+	
+	<b><p id="newrecord" style="position:absolute;top:250px;left:600px;color:red;visibility:hidden;">NEW SEA RECORD!</p></b>
+	<b><p id="crazysea" style="position:absolute;top:350px;left:600px;color:red;visibility:hidden;">CRAZY SPEED MADDAMAKKA!</p></b>
+	
+
+	
+	
+</body>
+</html>
