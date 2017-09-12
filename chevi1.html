@@ -1,0 +1,230 @@
+
+
+
+<html>
+<head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head>
+<title>Chevalier</title>
+
+<style>
+table#tab1 {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 200;
+    margin-left:550;
+    margin-top: -40}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    class: 'white';
+}
+
+
+
+
+
+</style>
+
+
+
+<script type="text/javascript">
+
+var  oalc=200; var ollarg=150; var otopi=200; var oleft=500;
+var alc=200; var llarg=150; var ajup=50; var topi=200; var left=500;
+var posic="d"
+var mposic="d"
+var omllarg=200, omleft=700
+var mllarg=200; var mleft
+var oanunci="Kill ya deadly mosca!"; var anunci
+var conti=1
+var lchev=3; var lmosc=6
+var win='undef'
+
+function alatac() 
+{	
+	
+	if(posic=="d") {posic="da"}
+	if(posic=="as") {posic="aa"}
+	if(posic=="a") {posic="as"}
+}
+function mouenr() 
+{
+	if(posic=="da") posic="d"
+	if(posic=="as")  posic="a"
+	if(posic=="aa")  posic="as"
+
+}
+function salta()
+{
+	if(posic=="d") {posic="s"}
+	if(posic=="a" ) {posic="d"}
+}
+function ajupet()
+{
+	if(posic=="d") posic="a"
+	if(posic=="s") posic="d"
+}
+
+
+function KeyPress(e)
+{
+	
+    var keynum;
+
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+    
+   if(win!='undef') keynum=-1
+	
+
+	//38 up 40 down 37 left 39 right
+	if(keynum==38) { salta() }
+	else if(keynum==40) { ajupet() }
+	else if(keynum==37) { mouenr() }
+	else if(keynum==39) { alatac() }
+	
+	if(posic=="d") {
+		document.getElementById('chevalier').src="d.png"
+		alc=oalc;topi=otopi;llarg=ollarg;left=oleft
+		anunci=oanunci}
+	if(posic=="da") {
+		document.getElementById('chevalier').src="da.png"
+		alc=oalc;topi=otopi;llarg=ollarg+ajup;left=oleft
+		if(mposic=="da") hit()}
+	if(posic=="a") {
+		document.getElementById('chevalier').src="a.png"
+		alc=oalc-ajup;topi=otopi+ajup;llarg=ollarg;left=oleft}
+	if(posic=="as") {
+		document.getElementById('chevalier').src="as.png"
+		alc=oalc-ajup;topi=otopi+ajup;llarg=ollarg+ajup;left=oleft}
+	if(posic=="aa") {
+		document.getElementById('chevalier').src="aa.png"
+		alc=oalc-ajup;topi=otopi+ajup;llarg=ollarg+2*ajup;left=oleft
+		if(mposic=="d") hit()
+		else if(mposic=="da") ostia()
+		}
+	if(posic=="s") {
+		document.getElementById('chevalier').src="s.png"
+		alc=oalc;topi=otopi-ajup;llarg=ollarg;left=oleft
+		anunci="I am the best"
+		}
+
+	document.getElementById('chevalier').style.height=alc
+	document.getElementById('chevalier').style.width=llarg
+	document.getElementById('chevalier').style.top=topi
+	document.getElementById('chevalier').style.left=left
+	
+ }
+function restart()
+{
+	win='undef'
+	lchev=3
+	lmosc=6
+	document.getElementById('reset').style.visibility="hidden"
+	starTime()
+	
+}
+
+function hit() {
+	document.body.style.backgroundColor='green'
+	document.getElementById('anounce').innerHTML="SHLURP!! YEAH!!"
+	document.getElementById('anounce').style.color="white"	
+	
+	setTimeout(function(){document.body.style.backgroundColor='white'
+		document.getElementById('anounce').style.color="black"},500)
+		lmosc=lmosc-0.5
+	if(win=='undef' && lmosc < 0.1) {win='vict'; lmosc="dead"}
+	document.getElementById('vmos').innerHTML=lmosc.toString()
+
+}
+
+function ostia()
+{
+	document.body.style.backgroundColor='red'	
+	setTimeout(function(){document.body.style.backgroundColor='white'},500)
+	lchev = lchev -1
+	if(win=='undef' && lchev < 0.1)  {win='lost'; lchev="dead"}
+	document.getElementById('vchev').innerHTML=lchev.toString()
+}
+
+function finish() {
+	if(win=='vict') {
+		anunci = "victory is yours noble Chevalier!"
+		document.getElementById('button1').innerHTML="Aplastala un cop més! Descarada!!"
+	}
+	else if(win=='lost') {
+		anunci ="Mighty Chevalier has been defeated by Mosca! So Sad of a noble french Chevalier..."
+		document.getElementById('button1').innerHTML="Fight her back! and seek for revenge!"
+	}
+	document.getElementById('reset').style.visibility="visible"
+	
+}
+
+
+function starTime()
+{
+	if (conti % 10 == 0 ) {mleft=omleft;mposic="d"}
+	else if(conti % 5 == 0) {
+		mleft=omleft-30
+		mposic="da"
+		if(posic=="aa" || posic=="as" ) {
+			document.getElementById('chevalier').src="ac.png"
+			posic="a"
+			anunci="FLASCA!"
+			ostia()
+			}
+		if(posic=="da") {
+			document.getElementById('chevalier').src="dc.png"
+			posic="d"
+			anunci="AUCH!"
+			ostia()
+			}
+	}
+	
+	conti=conti+1
+	document.getElementById('text').innerHTML=conti.toString()
+	document.getElementById('mosca').style.left=mleft
+	
+	
+	document.getElementById('vmos').innerHTML=lmosc.toString()
+	document.getElementById('vchev').innerHTML=lchev.toString()
+	
+	
+	document.getElementById('anounce').innerHTML=anunci
+	if(win=='undef') setTimeout(starTime,1000)
+	else finish()
+}
+
+</script>
+
+<body id="body" onload="starTime()" background="mangasea.jpg" onkeydown="KeyPress(event)">
+	
+	<img id="chevalier" src="d.png"  style="height:200px;width:150px;position:absolute; top:200px; left:500px; " />
+
+	<img id="mosca" src="fly.png"  style="height:200px;width:150px;position:absolute; top:200px; left:700px; " />
+	
+
+<p id="text"> </p>
+<p id="anounce" style="height:200px;width:150px;position:absolute; top:90px; left:500px; "> </p>
+	
+<table id="tab1">
+  <tr>
+    <th>Chevalier</th>
+    <th>Mosca</th>
+  </tr>
+  <tr>
+    <td > <p id="vchev">  3 </p> </td>
+    <td > <p id="vmos" >   6  </p> </td>
+  </tr>
+
+</table>
+	
+	
+	<button id="reset" onclick="restart()" style="color:red;position:absolute; top:150px; left:520px; visibility:hidden;"><p id='button1'>Fight her back</p></button></b>
+	
+</body>
+</html>
