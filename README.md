@@ -1,8 +1,8 @@
 ## Welcome to GitHub Pages
 
 
- [Link](https://mambon5.github.io/cuca/romi.html)
- [Chevalier](https://mambon5.github.io/chevalier/chevi1.html)
+ [Europe](https://mambon5.github.io/cuca/romi.html)
+ [Chevalier](https://mambon5.github.io/cuca/chevi1.html)
  [Pulpo](https://mambon5.github.io/cuca/movesquare3.html)
 
 You can use the [editor on GitHub](https://github.com/mambon5/cuca/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
