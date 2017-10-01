@@ -4,7 +4,7 @@
  [Europe](https://mambon5.github.io/cuca/romi.html)
  [Chevalier](https://mambon5.github.io/cuca/chevi2.html)
  [Pulpo](https://mambon5.github.io/cuca/movesquare3.html)
- [Jugo](https://mambon5.github.io/cuca/jugo1.Rhtml)
+ [Jugo](https://mambon5.github.io/cuca/jugo1.html)
 
 You can use the [editor on GitHub](https://github.com/mambon5/cuca/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
