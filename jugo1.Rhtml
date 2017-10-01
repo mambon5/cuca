@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html>
+<head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head>
+<title>Jugo</title>
+
+<style>
+table#tab1 {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 200;
+    margin-left:550;
+    margin-top: -40}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    class: 'white';
+}
+
+
+
+
+
+</style>
+
+
+
+<script type="text/javascript">
+
+var  oalc=200; var ollarg=150; var otopi=200; var oleft=500;
+var ini=1;
+window.onclick = function() 	{if(ini==1) {click();ini=2}
+	else {click2(); ini=1}
+}
+
+
+function click() {
+	document.getElementById('jugo').src='jugo3.png';
+	oleft=oleft+20
+	document.getElementById('jugo').style.left=40;
+}
+
+function click2() {
+	document.getElementById('jugo').src='jugo1.png';
+}
+
+function starTime()
+{
+	 setTimeout(starTime,1000)
+}
+
+</script>
+
+<body id="body"  onmousedown="click()">
+	
+	<img id="jugo" src="jugo2.png"  style="height:200px;width:150px;position:absolute; top:200px; left:500px; " />
+
+	
+	
+
+<p id="text"> </p>
+<p id="anounce" style="height:200px;width:150px;position:absolute; top:90px; left:500px; "> </p>
+	
+<table id="tab1">
+  <tr>
+    <th>Chevalier</th>
+    <th>Mosca</th>
+  </tr>
+  <tr>
+    <td > <p id="vchev">  ola </p> </td>
+    <td > <p id="vmos" >   6  </p> </td>
+  </tr>
+
+</table>
+	
+	
+	<button id="reset" onclick="restart()" style="color:red;position:absolute; top:150px; left:520px; visibility:hidden;"><p id='button1'>Fight her back</p></button></b>
+	
+</body>
+</html>
