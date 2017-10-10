@@ -8,6 +8,12 @@
 
 You can use the [editor on GitHub](https://github.com/mambon5/cuca/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
+Things to do in life:
+1) make an app to find out the best moment to drink beer
+2) make the perfect 2D world map ever
+3) start a sewing business and create by myself the best t-shirts and clothing pieces that mankiind has ever seen
+4) Create an awesome online game where users can interact and have common fun.
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
