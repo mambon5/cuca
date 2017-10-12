@@ -20,6 +20,8 @@ Things to do in life
 
 5) Enhance the CART machine learning methods of classifying data using regression/classification trees. Allow fancy oblique splits.
 
+6) create a game for Mars colonization like Civ5
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
