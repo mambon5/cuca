@@ -22,6 +22,18 @@ Things to do in life
 
 6) create a game for Mars colonization like Civ5
 
+
+
+Llibres a llegir: 
+1) Thomas Hobbes: 1588. British Philospher " the view that all legitimate political power must be "representative" and based on the consent of the people; and a liberal interpretation of law that leaves people free to do whatever the law does not explicitly forbid."
+
+2) FM2030 Iranian transhumanist.
+
+Coses polítiques:
+1) És primer la gent o el govern (CiU) que s'han tornat independistes? Com podem treure'n l'entrellat? Qui ha causat què?
+
+
+
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
