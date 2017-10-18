@@ -29,6 +29,10 @@ Llibres a llegir:
 
 2) FM2030 Iranian transhumanist.
 
+3) LLibre de les mémoires de Napóleon.
+
+4) Llibre de com cuinar garrofes per obtenir xocolata-like nutrients en comptes de cuinar xocapic: Tratamientos naturales al alcance de todos, d’Olga Cuevas i Lucía Redondo. (les garrofes s'assemblen al superpoderós "moringa tree" que té més calci, ferro i proteïnes que la llet, els espinacs o els ous respectivament.
+
 Coses polítiques:
 1) És primer la gent o el govern (CiU) que s'han tornat independistes? Com podem treure'n l'entrellat? Qui ha causat què?
 
