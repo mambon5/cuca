@@ -22,7 +22,7 @@ Things to do in life
 
 6) create a game for Mars colonization like Civ5
 
-
+7) Create a more realistic likelihood. I.e. change the fundamental probability theory of density functions.
 
 Llibres a llegir: 
 1) Thomas Hobbes: 1588. British Philospher " the view that all legitimate political power must be "representative" and based on the consent of the people; and a liberal interpretation of law that leaves people free to do whatever the law does not explicitly forbid."
